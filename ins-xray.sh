@@ -406,7 +406,7 @@ cat <<EOF >/etc/samvpn/xray/conf/05_VMess_WS_inbounds.json
         "security": "none",
         "wsSettings": {
           "acceptProxyProtocol": true,
-          "path": "/xrayvws"
+          "path": "/kuota-habis"
         }
       }
     }
@@ -464,7 +464,7 @@ cat >/etc/samvpn/xray/conf/vmess-nontls.json <<END
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/xrayws",
+          "path": "/kuota-habis",
           "headers": {
             "Host": ""
           }
