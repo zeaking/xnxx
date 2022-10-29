@@ -277,7 +277,7 @@ add-ws() {
        "net": "ws",
        "type": "none",
        "host": "${BUG}",
-       "path": "/xrayvws",
+       "path": "/kuota-habis",
        "tls": "tls",
        "sni": "${BUG}"
 }
@@ -292,7 +292,7 @@ EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/xrayws",
+      "path": "/kuota-habis",
       "type": "none",
       "host": "",
       "tls": "none"
