@@ -63,23 +63,28 @@ apt-get install socat -y
 apt install figlet -y
 apt install git -y
 clear
-echo "Please Input Your Domain Name"
-read -p "Input Your Domain : " host
-if [ -z $host ]; then
-    echo "No Domain Inserted !"
-else
-    echo $host >/root/domain
-fi
-echo -e "${RED}Installing XRAY${NC}"
+
+mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
+echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
+wget https://raw.githubusercontent.com/zeaking/xnxx/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
+
+#echo "Please Input Your Domain Name"
+#read -p "Input Your Domain : " host
+#if [ -z $host ]; then
+#    echo "No Domain Inserted !"
+#else
+#    echo $host >/root/domain
+#fi
+#echo -e "${RED}Installing XRAY${NC}"
 sleep 2
 
-wget https://raw.githubusercontent.com/fsvpn/multiport/main/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
-wget https://raw.githubusercontent.com/fsvpn/multiport/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/zeaking/xnxx/main/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/zeaking/xnxx/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 cd /usr/bin
-wget -O menu "https://raw.githubusercontent.com/fsvpn/multiport/main/xray-menu.sh" && chmod +x menu
-wget -O xp "https://raw.githubusercontent.com/fsvpn/multiport/main/xp.sh" && chmod +x xp
-wget -O installer "https://raw.githubusercontent.com/fsvpn/multiport/main/BOT_PANEL/installer.sh" && chmod +x installer
-wget -O bbt "https://raw.githubusercontent.com/fsvpn/multiport/main/BOT_PANEL/bbt.sh" && chmod +x bbt
+wget -O menu "https://raw.githubusercontent.com/zeaking/xnxx/main/xray-menu.sh" && chmod +x menu
+wget -O xp "https://raw.githubusercontent.com/zeaking/xnxx/main/xp.sh" && chmod +x xp
+#wget -O installer "https://raw.githubusercontent.com/fsvpn/multiport/main/BOT_PANEL/installer.sh" && chmod +x installer
+#wget -O bbt "https://raw.githubusercontent.com/fsvpn/multiport/main/BOT_PANEL/bbt.sh" && chmod +x bbt
 timedatectl set-timezone Asia/Jakarta
 echo "0 0 * * * root xp" >>/etc/crontab
 echo "0 5 * * * root reboot" >>/etc/crontab
@@ -89,7 +94,7 @@ systemctl restart nginx
 cd
 echo "menu" >>/root/.profile
 echo " "
-echo "===================-[ FSIDVPN Multiport ]-===================="
+echo "===================-[ Multiport ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""
@@ -105,7 +110,7 @@ echo "   - XRAY  Vless None TLS       : 8000" | tee -a log-install.txt
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===================-[ FSIDPN Multiport ]-===================="
+echo "===================-[ Multiport ]-===================="
 echo ""
 rm -f /root/ins-xray.sh
 rm -f /root/setup.sh
