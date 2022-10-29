@@ -68,14 +68,14 @@ mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
 echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
 wget https://raw.githubusercontent.com/zeaking/xnxx/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
 
-#echo "Please Input Your Domain Name"
-#read -p "Input Your Domain : " host
-#if [ -z $host ]; then
-#    echo "No Domain Inserted !"
-#else
-#    echo $host >/root/domain
-#fi
-#echo -e "${RED}Installing XRAY${NC}"
+echo "Please Input Your Domain Name"
+read -p "Input Your Domain : " host
+if [ -z $host ]; then
+    echo "No Domain Inserted !"
+else
+    echo $host >/root/domain
+fi
+echo -e "${RED}Installing XRAY${NC}"
 sleep 2
 
 wget https://raw.githubusercontent.com/zeaking/xnxx/main/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
