@@ -64,9 +64,9 @@ apt install figlet -y
 apt install git -y
 clear
 
-mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
-echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
-wget https://raw.githubusercontent.com/zeaking/xnxx/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
+#mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
+#echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
+#wget https://raw.githubusercontent.com/zeaking/xnxx/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
 
 echo "Please Input Your Domain Name"
 read -p "Input Your Domain : " host
